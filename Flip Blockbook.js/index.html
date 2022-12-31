@@ -1,0 +1,507 @@
+<html>
+<head>
+
+    
+<title>Project Report</title>     
+ <link rel="shortcut icon" type="image" href="images/Booky2.png">
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700i" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script src="booklet/jquery.easing.1.3.js" type="text/javascript"></script>
+<script src="booklet/jquery.booklet.1.1.0.min.js" type="text/javascript"></script>
+<link href="booklet/jquery.booklet.1.1.0.css" type="text/css" rel="stylesheet" media="screen" />
+
+		 <style>
+         
+              *{
+	margin:0;
+	padding:0;
+}
+body{
+	 background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(images/BD2.jpg);	
+	color:#444;
+	font-size:12px;
+	background-position: center;
+    background-size: cover;
+	color: #333;
+    font-family: 'Oswald', sans-serif;
+}
+ 
+ 
+.booklet           {
+	width:1000px;
+	height:800px;
+	position:relative;
+	margin:0 auto 10px;
+	-moz-box-shadow:0px 0px 1px #fff;
+	-webkit-box-shadow:0px 0px 1px #fff;
+	box-shadow:0px 0px 1px #fff;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	
+}
+.booklet .b-wrap-left  {
+	background:#fff url(images/left_bg.jpg) no-repeat top left;
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-topleft:10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+.booklet .b-wrap-right {
+	background:#efefef url(images/right_bg.jpg) no-repeat top left;
+	-webkit-border-top-right-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	-moz-border-radius-topright: 10px;
+	-moz-border-radius-bottomright: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+.booklet .b-counter {
+	bottom:10px;
+	position:absolute;
+	display:block;
+	width:90%;
+	height:20px;
+	border-top:1px solid #ddd;
+	color:#222;
+	text-align:center;
+	font-size:12px;
+	padding:5px 0 0;
+	background:transparent;
+	-moz-box-shadow:0px -1px 1px #fff;
+	-webkit-box-shadow:0px -1px 1px #fff;
+	box-shadow:0px -1px 1px #fff;
+	opacity:0.8;
+}
+.book_wrapper{
+	margin:0 auto;
+	padding-top:50px;
+	width:905px;
+	height:540px;
+	position:relative;
+	background:transparent url(images/bg.png) no-repeat 9px 27px;
+}
+.book_wrapper h1{
+	color:orange;
+	margin:5px 5px 5px 15px;
+	font-size:24px;
+	background:transparent url(images/h1.png) no-repeat bottom left;
+	padding-bottom:7px;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+.book_wrapper p{
+	font-size:15px;
+	margin:5px 5px 5px 15px;
+}
+.book_wrapper a.article,
+.book_wrapper a.demo{
+	background:transparent url(images/circle.png) no-repeat 50% 0px;
+	display:block;
+	width:95px;
+	height:41px;
+	text-decoration:none;
+	outline:none;
+	font-size:16px;
+	color:#555;
+	float:left;
+	line-height:41px;
+	padding-left:47px;
+}
+.book_wrapper a.demo{
+	margin-left:50px;
+}
+.book_wrapper a.article:hover,
+.book_wrapper a.demo:hover{
+	background-position:50% -41px;
+	color:#13386a;
+}
+.book_wrapper img{
+	margin-left: -5px;
+	width:380px;
+
+	padding:4px;
+	border:1px solid #ddd;
+	-moz-box-shadow:1px 1px 1px #fff;
+	-webkit-box-shadow:1px 1px 1px #fff;
+	box-shadow:1px 1px 1px #fff;
+}
+
+.booklet .b-wrap-right img{
+	border:1px solid #E6E3C2;
+}
+a#next_page_button,
+a#prev_page_button{
+	display:none;
+	position:absolute;
+	width:41px;
+	height:40px;
+	cursor:pointer;
+	margin-top:-20px;
+	top:50%;
+	background:transparent url(images/buttons.png) no-repeat 0px -40px;
+}
+a#prev_page_button{
+	left:-30px;
+}
+a#next_page_button{
+	right:-30px;
+	background-position:-41px -40px;
+}
+a#next_page_button:hover{
+	background-position:-41px 0px;
+}
+a#prev_page_button:hover{
+	background-position:0px 0px;
+}
+h2{
+	text-align: center;
+}
+h4{ 
+	margin-bottom: 0%;
+}
+
+
+         </style>
+		 
+    </head>
+    <body>
+    <br><br><br><br><br>
+		 
+		<div class="book_wrapper">
+			<a id="next_page_button"></a>
+			<a id="prev_page_button"></a>
+			 
+			<div id="mybook" style="display:none;">
+				<div class="b-load">
+					<div>
+						<h2> Project Report</h2>
+						<img src="images/Pic1.jpg">
+						<p>This booklet will show you the entire process that has been followed to 
+							build this website.
+							Starting with the idea of a making it about a florist shop.
+							The first page is a form which the user is required to fill with some valid information
+						    in order to have access to the shop.
+						</p>
+						
+						<div> ✿ Colors : <a href="https://coolors.co/" target="_blank"> Coolors Website</a></div>
+						<div> ✿ Image : <a href="https://pixabay.com/fr/" target="_blank"> Pixabay Website</a></div>
+						<br><br>
+						<h4>Asma CHKIRIDA | 3IIR G3</h4>
+					</div>
+					<div>
+						<h2>Website Favicon</h2>
+						<img src="images/Icon.jpg" />
+						<div> <img src="images/IconCode.jpg" alt="Icon" class="Hvr"/></div>
+						<p>The shop's name is Flora, to make it look cooler we could always add a favicon.
+						<div> ✿ Icons : <a href="https://www.flaticon.com/" target="_blank"> Flaticon Website</a></div> 
+						</p>
+						<h2>Overlapped Divs</h2>
+						<img src="images/Overlap.jpg" alt="Icon"/>
+		                <p>
+							In order to get the overlapping effect, We start from adding a parent class
+							to the first div (the image) and a child class to the second div (The form container) and after that we add 
+							some CSS attributs.
+						</p>
+					</div>
+					<div>
+						<p> This is the HTML code :</p>
+						<img src="images/Divs.jpg" />
+						<p> And this is the CSS code :</p>
+						<img src="images/Par.jpg" />
+						<img src="images/Child.jpg" />
+						<p> We also added some CSS attributs to the image, such as border radius, width ..</p>
+					</div>
+					<div>
+						<h2> Image </h2>
+						<p> Here is the CSS code :</p>
+						<img src="images/Pic.jpg" />
+						<img src="images/Pict.jpg" />
+					</div>
+					<div>
+						<h2> Form </h2>
+						<p>
+							The user is required to enter a valid username, email,password.
+							We managed to do that using Javascript and Regex.
+							<h3> Username </h3>
+							The username should be a 3 to 25 characters string otherwise an error message will be shown.
+							<img src="images/user.jpg" />
+						   <img src="images/user1.jpg" />
+						   <p> Here is the HTML code </p>
+						   <img src="images/username.jpg" />
+						</p>
+					</div>
+					<div>
+						<p> Javascript code to validate username </p>
+						<img src="images/userJS.jpg" />
+						<img src="images/user11.jpg" />
+
+					</div>
+					<div>
+						<h3> Email </h3>
+						<p> The email cannot be blank, it also should follow the email pattern or the REGEX</p>
+						 <img src="images/email.jpg" />
+						   <img src="images/email1.jpg" />
+						   <p> Here is the HTML code </p>
+						   <img src="images/email2.jpg" />
+
+					</div>
+					<div>
+						<p> Here is the JavaScript code to check email validation </p>
+						<img src="images/emailV.jpg" />
+						<img src="images/validemail.jpg" />
+						<h2> Passwords </h2>
+						Passwords should be at least 8 characters, with at least one uppercase, one lowercase, one number and one special character.
+						<img src="images/error.jpg" />
+
+					</div>
+					<div>
+						<img src="images/pass1.jpg" />
+						<img src="images/pass3.jpg" />
+						<p> And here is the HTML code : </p>
+						<img src="images/passHtml.jpg" />
+					</div>
+					<div>
+						<p> Javascript code to check if the password chosen is secure and also to check if the two passwored entered match or not.</p>
+						<img src="images/PassCheck.jpg" />
+						<img src="images/PassMatch.jpg" />
+					</div>
+					<div>
+						<h2>Submit Button</h2>
+						When the user clicks on this button, if the entered information are valid, they will be redirected to the shop.
+						otherwise an error message will be shown until the user enters valid information.
+						<p>HTML code </p>
+						<img src="images/btnhtml.jpg" />
+						<p>JavaScript code </p>
+						<img src="images/subjs.jpg" />
+						
+					</div>
+					<div>
+						<p>css code </p>
+						<img src="images/btncss.jpg" />
+						<img src="images/btn.jpg" />
+						<h3>Space Restriction</h3>
+						<img src="images/nospace.jpg" />
+
+					</div>
+					<div>
+						<h2>Footer </h2>
+						<img src="images/foot.jpg" />
+					<p> The footer includes the designers name and links to some social media platforms</p>
+					<p> HTML code : </p>
+					<img src="images/links.jpg" />
+					<p> In order to get those icons we added <a href="https://fontawesome.com/">Awesome Fonts Link </a> to the head elemen</p>
+					<img src="images/c.jpg" />
+					</div>
+					<div>
+						<h2>Welcome to Flora</h2>
+						<img src="images/full.jpg" />
+						<p> After submitting the form, the user will be redirected to the shop.
+							The first page is a typical page in which there is a plenty of different elements all wrapped in one container.
+                           </p> <img src="images/Con.jpg" />
+							
+						
+					</div>
+					<div>
+						<p>starting from the top, we have a navbar.</p>
+							<h3> Navbar</h3>
+						</p> <img src="images/navbar.png" />
+						<p> Clicking on any of these three elements will redirect the user to a different page.</p>
+						<img src="images/nav.jpg" />
+						<p> A basic CSS underline link hover effect</p>
+						
+						
+					</div>
+					<div>
+						
+						<img src="images/nav1.jpg" />
+						<img src="images/nav2.jpg" />
+					</div>
+					<div>
+						<p> Right to the left side, we have the shop's name with a slogan, and also a button that redirects the user to the products page.</p>
+						<img src="images/bot.jpg" />
+						<h3>Name & Slogan</h3>
+						<img src="images/b.jpg" />
+						<img src="images/b1.jpg" />
+					</div>
+					<div>
+						<h3> Button </h3>
+						<p> Using CSS we applied some styles on the button, such as border radius, hover and stuff.
+						</p>
+						<img src="images/b3.jpg" />
+					</div>
+					<div>
+						<h2>Random Products Display </h2>
+						<img src="images/rand.jpg" />
+						<p> Every time the user refreshes the page, new random products pop up, in order to make this happen we worked with 
+							JSON to create objects which are in this case the products we're selling. Each product has 4 properties; A name, a price, a category 
+							and an image.
+
+						</p>
+						
+
+					</div>
+					<div>
+						<img src="images/pr.jpg" />
+						<p> Using JavaScript we managed to create different cards that contain the products with all their properties
+							as shown in the code below 
+						</p>
+						<img src="images/card.jpg" />
+					</div>
+					<div> 
+						<p>Now that we have all our cards created, we need to display only 2 of them.
+							To make it easier, we implemented this filtering function that we'll use later constantly.
+						</p>
+						<img src="images/ra.jpg" />
+						<img src="images/ran.jpg" />
+						
+					</div>
+					<div>
+						<h2>Products page</h2>
+						<p>Basically its the same as the previous one when it comes to the body, the navbar, the footer ..
+							but this time inside the container div we have to other divs or columns. The first one is for the search bar
+							and the filtering elements (Filter by category and Filter by maximal price) and the second one is for displaying the products.
+							<img src="images/Fl.jpg" />
+						</p>
+					</div>
+					<div>
+						<h3>Search & Filters</h3>
+						<img src="images/bar.jpg" />
+						<p> The user can choose between filtering products by price or by their categories.
+							They also can search products by their names.
+						</p>
+					</div>
+					<div>
+						<p> To filter the products by their categories we used the filtering function that we talked about earlier</p>
+						<img src="images/Filter.jpg" />
+						<img src="images/scr.jpg" />
+					</div>
+					<div>
+						<p>Searching products by name : </p>
+						<img src="images/search.jpg" />
+						<p>Once the user types the name and clicks on search, this function converts what they typed to the uppercase 
+							and then comapres it to all the products names that we have, if their is a match, the function displays it.
+						</p>
+					</div>
+					<div>
+						<p>
+							The HTML code
+						</p>
+						<img src="images/htm.jpg" />
+						<p> When it comes to searching by price, the user chooses the maximal price using the range element.
+						</p>
+					</div>
+					<div>
+						<img src="images/range.jpg" />
+						<p> This function takes the range value and compares it to all the products prices, if the products price is less than the range value,
+							the function displays it.
+						</p>
+						<img src="images/flow.jpg" />
+
+					</div>
+					<div>
+						<h3>Applying style on Cards : </h3>
+						<p> Including a transition whenever the user hovers on any card.</p>
+						<img src="images/style.jpg" />
+						<img src="images/style1.jpg" />
+					</div>
+					<div>
+                    <img src="images/style2.jpg" />
+					<h3>Applying style on buttons : </h3>
+					<img src="images/btn4.jpg" />
+					<p> The same thing for the search bar and the button.</p>
+					</div>
+					<div>
+						<h2> About Page </h2>
+						<p>This page includes the previous basic elements like the navbar, footer ..
+							And also two other divs with different elements.
+						</p> 
+						<img src="images/about.jpg" />
+						<p>At the right side we have a div with a transparent background, 
+							on this div we have some information about the shop and some platforms icons.</p>
+							<p> At the left we have a video that's being played in a loop.</p>
+					</div>
+					<div>
+						<img src="images/div.jpg" />
+						<p> this div itself contains many elements; On top we have the sub-heading tag h2, we also have a small paragraph znd in the bottom we have the icons.</p>
+						<img src="images/soc.jpg" />
+						
+					</div>
+					<div>
+						<h3>The HTML code : 
+						</h3>
+						<img src="images/code1.jpg" />*
+						
+						
+					</div>
+					<div>
+                       <h3>The applied CSS style :</h3>
+						<img src="images/para.jpg" />
+						<img src="images/text.jpg" />
+
+					</div>
+					<div>
+						<img src="images/f.jpg" />
+						<img src="images/css.jpg" />
+					</div>
+					<div>
+						<h2>Video </h2>
+						<img src="images/vid.jpg" />
+						<h3>The HTML code :</h3>
+						<img src="images/vid1.jpg" />
+
+					</div>
+					<div>
+						<h3>The CSS code :</h3>
+						<img src="images/vide.jpg" />
+						
+					</div>
+				</div>
+			</div>
+		</div>
+        
+        <script type="text/javascript">
+			$(function() {
+				var $mybook 		= $('#mybook');
+				var $bttn_next		= $('#next_page_button');
+				var $bttn_prev		= $('#prev_page_button');
+				var $loading		= $('#loading');
+				var $mybook_images	= $mybook.find('img');
+				var cnt_images		= $mybook_images.length;
+				var loaded			= 0;
+				 
+				$mybook_images.each(function(){
+					var $img 	= $(this);
+					var source	= $img.attr('src');
+					$('<img/>').load(function(){
+						++loaded;
+						if(loaded == cnt_images){
+							$loading.hide();
+							$bttn_next.show();
+							$bttn_prev.show();
+							$mybook.show().booklet({
+								name:               null,                            //  
+								width:              800,                             //  
+								height:             500,                             //   
+								speed:              600,                             //  
+								direction:          'LTR',                           //  
+								                           //  
+								next:               $bttn_next,          			//  
+								prev:               $bttn_prev,          			//  
+								                       
+							});
+							Cufon.refresh();
+						}
+					}).attr('src',source);
+				});
+				
+			});
+        </script>
+ 
+    </body>
+ 
+</html>
